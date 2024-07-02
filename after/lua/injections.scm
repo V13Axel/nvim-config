@@ -1,3 +1,5 @@
+;; extends
+
 ((comment
    content: (_) @injection.trigger
    (#lua-match? @injection.trigger ";;scheme")

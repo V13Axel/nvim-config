@@ -1,3 +1,5 @@
+;; extends
+
 ;; SQL for Laravel raw methods
 ((member_call_expression
     name: (_) @_raw_func_identifier
