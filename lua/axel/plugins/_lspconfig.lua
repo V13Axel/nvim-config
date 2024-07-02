@@ -35,7 +35,7 @@ return {
             'emmet_ls',
             'tailwindcss',
             'intelephense',
-            -- 'openscad_lsp',
+            'openscad_lsp',
             'bashls',
             -- 'phpactor',
         }
@@ -134,13 +134,13 @@ return {
 
         require('lspconfig').intelephense.setup {
             init_options = {
-                licenceKey = 'CHANGEME'
+                licenceKey = os.getenv('INTELEPHENSE_KEY')
             }
         }
 
         require('lspconfig').emmet_ls.setup {
             capabilities = capabilities,
-            filetypes = { 'blade', 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+            filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
         }
 
         require('lspconfig').gdscript.setup {

@@ -63,10 +63,10 @@ local plugins = {
     { import = 'axel.plugins._undotree' },
 
     -- Automatically add closing brackets, quotes, etc.
-    { 'windwp/nvim-autopairs', config = true },
+    { 'windwp/nvim-autopairs',                       config = true },
 
     -- Add smooth scrolling to avoid jarring jumps
-    { import = 'axel.plugins._cinnamon' },
+    { import = 'axel.plugins._neoscroll' },
 
     -- All closing buffers without closing the split window.
     { import = 'axel.plugins._bufdelete' },
@@ -158,7 +158,10 @@ local plugins = {
     -- Database ... in your editor
     { import = 'axel.plugins._dadbod' },
 
-    { 'harrisoncramer/jump-tag' },
+    {
+        'ricardoramirezr/blade-nav.nvim',
+        ft = { 'blade', 'php' }
+    },
 }
 
 require("lazy").setup(plugins);
