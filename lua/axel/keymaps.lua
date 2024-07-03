@@ -96,7 +96,7 @@ vim.keymap.set('n', '<M-down>', "<c-W>+")
 vim.keymap.set('n', '<leader>i', '~hi')
 
 -- Remove selection and toggle case. e.g. `vtP<leader>I` -> `getProperty` -> `property`
-vim.keymap.set('v', '<leader>I', 'd~h')
+vim.keymap.set('v', '<leader>i', 'd~h')
 
 -- GH CLI
 silentnmap('<leader>ghpv', ':!gh pr view --web<CR>')

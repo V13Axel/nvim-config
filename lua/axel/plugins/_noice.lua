@@ -32,10 +32,9 @@ return {
                 },
                 cmdline_popup = {
                     relative = "cursor",
-                    position = { row = 1, col = 0 },
+                    position = { row = 0, col = -2 },
                     border = {
-                        style = "solid",
-                        padding = { 0, 2 },
+                        padding = { 0, 0 },
                     },
                     filter_options = {},
                     win_options = {
