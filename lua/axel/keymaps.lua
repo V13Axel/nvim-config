@@ -131,3 +131,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     group = highlight_group,
     pattern = '*',
 })
+
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+    pattern = { 'sql' },
+    callback = function()
+        vim.notify("SQL file loaded")
+        vim.keymap.set('n', '<m-1>', vim.cmd.DBUI, { buffer = true })
+        vim.keymap.set('n', '<leader>=', ':%!sleek<CR>', { silent = true })
+    end
+})
