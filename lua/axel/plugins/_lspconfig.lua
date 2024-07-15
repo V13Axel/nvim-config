@@ -37,6 +37,8 @@ return {
             'intelephense',
             'openscad_lsp',
             'bashls',
+            'cssls',
+            -- 'somesass_ls',
             -- 'phpactor',
         }
 
@@ -107,6 +109,12 @@ return {
 
             -- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
         end
+
+        require("lspconfig").cssls.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            filetypes = { 'scss', 'css' },
+        }
 
         require("lspconfig").clangd.setup {
             on_attach = on_attach,

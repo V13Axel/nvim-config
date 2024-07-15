@@ -13,6 +13,15 @@
 ; <div :class="{ 'classname': someJsValue }"></div>
 (attribute
   (attribute_name) @_attr
+  (#lua-match? @_attr "^@%l")
+  (quoted_attribute_value
+    (attribute_value) @injection.content)
+  (#set! injection.language "javascript"))
+
+; AlpineJS x-bind shorthand
+; <div :class="{ 'classname': someJsValue }"></div>
+(attribute
+  (attribute_name) @_attr
   (#lua-match? @_attr "^:%l")
   (quoted_attribute_value
     (attribute_value) @injection.content)
