@@ -9,14 +9,12 @@ return {
                 telescope = {
                     enabled = true,
                 },
-                harpooon = true,
                 coc_nvim = true,
                 neotest = true,
                 noice = true,
                 notify = true,
             },
             no_italic = true,
-            no_underline = true,
             no_bold = true,
             custom_highlights = function(colors)
                 return {
