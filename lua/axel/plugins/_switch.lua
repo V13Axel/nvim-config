@@ -26,6 +26,14 @@ return {
                     {
                         ["\\(\\$[[:keyword:].]\\+\\)\\[\\(.*\\)]"] = 'Arr::get(\\1, \\2)',
                         ["Arr::get(\\(\\$[[:keyword:].]\\+\\), \\([\"\\|\'].*[\"\\|\']\\))"] = '\\1\\[\\2\\]',
+                    },
+                    {
+                        ["billing"] = 'shipping',
+                        ["shipping"] = 'billing',
+                    },
+                    {
+                        ["Billing"] = 'Shipping',
+                        ["Shipping"] = 'Billing',
                     }
                 }
             end

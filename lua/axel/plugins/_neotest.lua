@@ -20,15 +20,6 @@ return {
         require('neotest').setup({
             -- log_level = vim.log.levels.DEBUG,
             consumers = {
-                -- lualine = function(client)
-                --     client.listeners.started = function(adapter_id, results, partial)
-                --         if partial then
-                --             return
-                --         end
-
-
-                --     end
-                -- end,
                 notify = function(client)
                     client.listeners.results = function(adapter_id, results, partial)
                         -- Partial results can be very frequent

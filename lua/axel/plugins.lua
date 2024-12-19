@@ -162,6 +162,17 @@ local plugins = {
         'ricardoramirezr/blade-nav.nvim',
         ft = { 'blade', 'php' }
     },
+
+    {
+        'hat0uma/csvview.nvim',
+        config = function()
+            require('csvview').setup({
+                view = {
+                    display_mode = "border"
+                }
+            })
+        end
+    }
 }
 
 require("lazy").setup(plugins);

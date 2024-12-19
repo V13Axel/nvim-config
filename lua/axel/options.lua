@@ -21,6 +21,7 @@ vim.opt.wildmode =
 vim.opt.title = true
 vim.opt.mouse = 'a' -- enable mouse for all modes
 
+-- vim.opt.scrolljump = -50 -- Worth considering? 
 
 -- Laracasts
 vim.opt.ignorecase = true

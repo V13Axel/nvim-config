@@ -34,6 +34,7 @@ return {
                     relative = "cursor",
                     position = { row = 0, col = -2 },
                     border = {
+                        style = "solid",
                         padding = { 0, 0 },
                     },
                     filter_options = {},

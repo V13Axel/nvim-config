@@ -30,7 +30,7 @@ return {
         -- Enable the following language servers
         local servers = {
             'pyright',
-            'tsserver',
+            'ts_ls',
             'lua_ls',
             'emmet_ls',
             'tailwindcss',
@@ -111,9 +111,18 @@ return {
         end
 
         require("lspconfig").cssls.setup {
+            cmd = { "vscode-css-language-server", "--stdio" },
             on_attach = on_attach,
             capabilities = capabilities,
             filetypes = { 'scss', 'css' },
+            settings = {
+                scss = {
+                    lint = {
+                        idSelector = "warning",
+                        unknownAtRules = 'ignore',
+                    },
+                },
+            },
         }
 
         require("lspconfig").clangd.setup {
