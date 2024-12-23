@@ -122,6 +122,12 @@ return {
             },
         })
 
+        vim.keymap.set("n", "<m-8>", require('neotest').summary.toggle)
+        vim.keymap.set("i", "<m-8>", function()
+            vim.cmd('stopinsert');
+            require('neotest').summary.toggle();
+        end)
+
         vim.keymap.set('n', '<leader>tr', function() require('neotest').run.run("tests") end)
         vim.keymap.set('n', '<leader>tn', function() require('neotest').run.run() end)
         vim.keymap.set('n', '<leader>tf', function() require('neotest').run.run(vim.fn.expand('%')) end)
