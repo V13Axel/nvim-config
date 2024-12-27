@@ -118,6 +118,11 @@ vim.keymap.set('n', '<C-t>', vim.cmd.tabnew, { silent = true })
 silentnmap(']S', function() require('jump-tag').jumpNextSibling() end)
 silentnmap('[S', function() require('jump-tag').jumpPrevSibling() end)
 
+-- DBUI
+silentnmap('<M-D>', function ()
+    vim.api.nvim_command('tab DBUI')
+end)
+
 -- [[ Highlight on yank ]]
 -- Note ... I realize this isn't a keybind, _technically_.
 -- This just seemed like the best place for this
