@@ -18,7 +18,7 @@ return {
     },
     config = function()
         require('neotest').setup({
-            -- log_level = vim.log.levels.DEBUG,
+            log_level = vim.log.levels.DEBUG,
             consumers = {
                 notify = function(client)
                     client.listeners.results = function(adapter_id, results, partial)

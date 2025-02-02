@@ -172,7 +172,9 @@ local plugins = {
                 }
             })
         end
-    }
+    },
+
+    { import = 'axel.plugins._dap' }
 }
 
 require("lazy").setup(plugins);
