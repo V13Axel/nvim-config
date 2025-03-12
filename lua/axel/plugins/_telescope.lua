@@ -93,10 +93,14 @@ return {
         vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files)
         vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
         vim.keymap.set('n', '<leader>F',
-            [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]])
+            function()
+                require('telescope.builtin')
+                    .find_files({ no_ignore = true, prompt_title = 'All Files' })
+            end)
         vim.keymap.set('n', '<leader>G', require('telescope').extensions.live_grep_args.live_grep_args)
         -- vim.keymap.set('n', '<leader>h', require('telescope.builtin').oldfiles)
-        vim.keymap.set('n', '<leader>S', function() require('telescope.builtin').lsp_document_symbols({ symbols='method' }) end)
+        vim.keymap.set('n', '<leader>S',
+            function() require('telescope.builtin').lsp_document_symbols({ symbols = 'method' }) end)
 
         -- Fuzzy search in current buffer
         vim.keymap.set('n', '<leader>/', function()

@@ -32,6 +32,18 @@ return {
                         ["shipping"] = 'billing',
                     },
                     {
+                        ["off"] = 'on',
+                        ["on"] = 'off',
+                    },
+                    {
+                        ["enable"] = 'disable',
+                        ["disable"] = 'enable',
+                    },
+                    {
+                        ["yes"] = 'no',
+                        ["no"] = 'yes',
+                    },
+                    {
                         ["Billing"] = 'Shipping',
                         ["Shipping"] = 'Billing',
                     }
