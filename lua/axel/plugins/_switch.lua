@@ -46,6 +46,27 @@ return {
                     {
                         ["Billing"] = 'Shipping',
                         ["Shipping"] = 'Billing',
+                    },
+                    {
+                        ["visible"] = 'hidden',
+                        ["hidden"] = 'visible',
+                    },
+                }
+            end
+        })
+
+        vim.api.nvim_create_autocmd({ 'FileType' }, {
+            pattern = { 'php' },
+            callback = function ()
+                vim.b.switch_custom_definitions = {
+                    {
+                        ["public"] = 'private',
+                        ["private"] = 'protected',
+                        ["protected"] = 'public',
+                    },
+                    {
+                        ["static"] = 'self',
+                        ["self"] = 'static',
                     }
                 }
             end

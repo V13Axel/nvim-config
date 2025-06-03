@@ -119,7 +119,7 @@ silentnmap(']S', function() require('jump-tag').jumpNextSibling() end)
 silentnmap('[S', function() require('jump-tag').jumpPrevSibling() end)
 
 -- DBUI
-silentnmap('<M-D>', function ()
+silentnmap('<M-D>', function()
     vim.api.nvim_command('tab DBUI')
 end)
 
@@ -151,3 +151,12 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
         vim.keymap.set('n', '<m-1>', 'q', { buffer = true })
     end
 })
+
+-- close quickfix menu after selecting choice
+vim.api.nvim_create_autocmd(
+    "FileType", {
+        pattern = { "qf" },
+        callback = function()
+            vim.keymap.set('n', '<CR>', '<CR>:cclose<CR>', { silent = true, buffer = true, noremap = true })
+        end
+    })
