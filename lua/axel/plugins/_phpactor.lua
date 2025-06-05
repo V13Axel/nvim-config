@@ -7,17 +7,3 @@ return {
         vim.keymap.set('n', '<leader>pn', ':PhpactorClassNew<CR>', { silent = true })
     end
 }
-
--- return {
---     "gbprod/phpactor.nvim",
---     build = function()
---         require("phpactor.handler.update")()
---     end,
---     dependencies = {
---         "nvim-lua/plenary.nvim",
---         "neovim/nvim-lspconfig"
---     },
---     opts = {
-
---     },
--- }
