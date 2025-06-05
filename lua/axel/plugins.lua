@@ -96,15 +96,7 @@ local plugins = {
     { 'JoosepAlviste/nvim-ts-context-commentstring', config = true },
 
     -- Provide lua context for vim builtin objects
-    {
-        "folke/neodev.nvim",
-        opts = {},
-        config = function()
-            require('neodev').setup({
-                library = { plugins = { 'neotest' }, types = true },
-            })
-        end
-    },
+    { import = 'axel.plugins._neodev' },
 
     -- Language servers
     { import = 'axel.plugins._lspconfig' },
@@ -123,7 +115,6 @@ local plugins = {
 
     -- Show indent markers even on blank lines
     { import = 'axel.plugins._indent-blankline' },
-
 
     -- A free, open source PHP LSP
     { import = 'axel.plugins._phpactor' },
@@ -158,41 +149,14 @@ local plugins = {
     -- Database ... in your editor
     { import = 'axel.plugins._dadbod' },
 
-    {
-        "adalessa/laravel.nvim",
-        dependencies = {
-            "tpope/vim-dotenv",
-            "nvim-telescope/telescope.nvim",
-            "MunifTanjim/nui.nvim",
-            "kevinhwang91/promise-async",
-        },
-        cmd = { "Laravel" },
-        keys = {
-            { "<leader>la", ":Laravel artisan<cr>" },
-            { "<leader>lr", ":Laravel routes<cr>" },
-            { "<leader>lm", ":Laravel related<cr>" },
-            { "<leader>lg", ":Laravel gf<cr>" },
-        },
-        event = { "VeryLazy" },
-        opts = {},
-        config = true,
-    },
+    { import = 'axel.plugins._laravel' },
 
     {
         'ricardoramirezr/blade-nav.nvim',
         ft = { 'blade', 'php' }
     },
 
-    {
-        'hat0uma/csvview.nvim',
-        config = function()
-            require('csvview').setup({
-                view = {
-                    display_mode = "border"
-                }
-            })
-        end
-    },
+    { import = 'axel.plugins._csv-view' },
 
     { import = 'axel.plugins._dap' }
 }
