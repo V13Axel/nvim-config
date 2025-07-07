@@ -21,10 +21,10 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     -- Commenting support.
-    { 'tpope/vim-commentary' },
+    'tpope/vim-commentary',
 
     -- Swap text around
-    { 'tommcdo/vim-exchange' },
+    'tommcdo/vim-exchange',
 
     -- Notifications
     { import = 'axel.plugins._notify' },
@@ -33,28 +33,31 @@ local plugins = {
     { import = 'axel.plugins._surround' },
 
     -- Pairs of handy bracket mappings, like [b and ]b.
-    { 'tpope/vim-unimpaired' },
+    'tpope/vim-unimpaired',
 
     -- %S replacements for case
-    { 'tpope/vim-abolish' },
+    'tpope/vim-abolish',
 
     -- Allow plugins to enable repeating of commands.
-    { 'tpope/vim-repeat' },
+    'tpope/vim-repeat',
 
     -- Add more languages.
-    { 'sheerun/vim-polyglot' },
+    'sheerun/vim-polyglot',
 
     -- Navigate seamlessly between Vim windows and Tmux panes.
-    { 'christoomey/vim-tmux-navigator' },
+    'christoomey/vim-tmux-navigator',
 
     -- Jump to the last location when opening a file.
-    { 'farmergreg/vim-lastplace' },
+    'farmergreg/vim-lastplace',
 
     -- Enable * searching with visually selected text.
-    { 'nelstrom/vim-visual-star-search' },
+    'nelstrom/vim-visual-star-search',
 
     -- Automatically create parent dirs when saving.
-    { 'jessarcher/vim-heritage' },
+    'jessarcher/vim-heritage',
+
+    -- [Ctrl+W, m] to (temporarily) maximize the current buffer
+    'dhruvasagar/vim-zoom',
 
     -- Text objects for HTML attributes.
     { import = 'axel.plugins._vim-textobj-xmlattr' },
@@ -127,9 +130,6 @@ local plugins = {
 
     -- Generate beautiful images of your code
     { import = 'axel.plugins._silicon' },
-
-    -- [Ctrl+W, m] to (temporarily) maximize the current buffer
-    { 'dhruvasagar/vim-zoom' },
 
     -- `gs` to convert symbols to their most common alternatives
     { import = 'axel.plugins._switch' },
