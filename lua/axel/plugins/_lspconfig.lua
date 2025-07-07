@@ -19,7 +19,7 @@ return {
 
         vim.keymap.set(
             "",
-            "<leader>l",
+            "<leader>ll",
             require("lsp_lines").toggle,
             { desc = "Toggle lsp_lines" }
         )
@@ -35,12 +35,12 @@ return {
             'lua_ls',
             'emmet_ls',
             'tailwindcss',
-            'intelephense',
+            -- 'intelephense',
             'openscad_lsp',
             'bashls',
             'cssls',
             -- 'somesass_ls',
-            -- 'phpactor',
+            'phpactor',
         }
 
         --
@@ -49,6 +49,7 @@ return {
 
         require('mason-lspconfig').setup {
             ensure_installed = servers,
+            automatic_enable = false,
         }
 
         if not (string.find(os.getenv('HOME'), "com.termux")) then

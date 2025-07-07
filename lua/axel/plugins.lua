@@ -128,9 +128,6 @@ local plugins = {
     -- Generate beautiful images of your code
     { import = 'axel.plugins._silicon' },
 
-    -- Prompts regarding which keyboard shortcuts do what
-    -- { import = 'axel.plugins._whichkey' },
-
     -- [Ctrl+W, m] to (temporarily) maximize the current buffer
     { 'dhruvasagar/vim-zoom' },
 
@@ -149,16 +146,23 @@ local plugins = {
     -- Database ... in your editor
     { import = 'axel.plugins._dadbod' },
 
+    -- Provides a bunch of Laravel-specific helpers
     { import = 'axel.plugins._laravel' },
 
+    -- Enables movement in and between Blade files
     {
         'ricardoramirezr/blade-nav.nvim',
         ft = { 'blade', 'php' }
     },
 
+    -- Load up a CSV and get a pretty view
     { import = 'axel.plugins._csv-view' },
 
-    { import = 'axel.plugins._dap' }
+    -- Debugging directly in Neovim
+    { import = 'axel.plugins._dap' },
+
+    -- Highlights colors directly in the editor
+    { import = 'axel.plugins._nvim-highlight-colors' },
 }
 
 require("lazy").setup(plugins);

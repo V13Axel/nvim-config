@@ -11,19 +11,19 @@ return {
             workspaces = {
                 {
                     name = "Zettelkasten",
-                    path = "~/Git/Zettelkasten",
+                    path = "~/ObsidianVaults/Zettelkasten",
                 },
                 {
                     name = "PV-Notes",
-                    path = "~/Git/PV-Notes",
+                    path = "~/ObsidianVaults/PV-Notes",
                 },
                 {
                     name = "Undying-Valor-Notes",
-                    path = "~/Git/Undying-Valor-Notes",
+                    path = "~/ObsidianVaults/Undying-Valor-Notes",
                 },
                 {
                     name = "Jeannora",
-                    path = "~/Git/Jeannora",
+                    path = "~/ObsidianVaults/Jeannora",
                 }
             }
         })
