@@ -26,12 +26,6 @@ local plugins = {
     -- Swap text around
     'tommcdo/vim-exchange',
 
-    -- Notifications
-    { import = 'axel.plugins._notify' },
-
-    -- Add, change, and delete surrounding text.
-    { import = 'axel.plugins._surround' },
-
     -- Pairs of handy bracket mappings, like [b and ]b.
     'tpope/vim-unimpaired',
 
@@ -65,6 +59,12 @@ local plugins = {
     -- Navigable tree of undo history
     { import = 'axel.plugins._undotree' },
 
+    -- Notifications
+    { import = 'axel.plugins._notify' },
+
+    -- Add, change, and delete surrounding text.
+    { import = 'axel.plugins._surround' },
+
     -- Automatically add closing brackets, quotes, etc.
     { 'windwp/nvim-autopairs',                       config = true },
 
@@ -77,7 +77,7 @@ local plugins = {
     -- Split arrays and methods onto multiple lines, or join them back up.
     { import = 'axel.plugins._splitjoin' },
 
-    -- -- Automatically fix indentation when pasting code.
+    -- Automatically fix indentation when pasting code.
     { import = 'axel.plugins._pasta' },
 
     -- Add git related info in the signs columns and popups
