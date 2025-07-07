@@ -140,7 +140,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd({ 'FileType' }, {
     pattern = { '*sql' },
     callback = function()
-        vim.keymap.set('n', '<m-1>', vim.cmd.DBUI, { buffer = true })
+        vim.keymap.set('n', '<m-1>', vim.cmd.DBUIToggle, { buffer = true })
         vim.keymap.set('n', '<leader>=', ':%!sleek<CR>', { silent = true, buffer = true })
     end
 })
@@ -148,15 +148,14 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 vim.api.nvim_create_autocmd({ 'FileType' }, {
     pattern = { 'dbui' },
     callback = function()
-        vim.keymap.set('n', '<m-1>', 'q', { buffer = true })
+        vim.keymap.set('n', '<m-1>', vim.cmd.DBUIToggle, { buffer = true })
     end
 })
 
 -- close quickfix menu after selecting choice
-vim.api.nvim_create_autocmd(
-    "FileType", {
-        pattern = { "qf" },
-        callback = function()
-            vim.keymap.set('n', '<CR>', '<CR>:cclose<CR>', { silent = true, buffer = true, noremap = true })
-        end
-    })
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+    pattern = { "qf" },
+    callback = function()
+        vim.keymap.set('n', '<CR>', '<CR>:cclose<CR>', { silent = true, buffer = true, noremap = true })
+    end
+})
