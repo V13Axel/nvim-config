@@ -33,7 +33,7 @@ return {
             'pyright',
             'ts_ls',
             'lua_ls',
-            'emmet_ls',
+            'emmet_language_server',
             'tailwindcss',
             -- 'intelephense',
             'openscad_lsp',
@@ -157,7 +157,7 @@ return {
             }
         }
 
-        require('lspconfig').emmet_ls.setup {
+        require('lspconfig').emmet_language_server.setup {
             capabilities = capabilities,
             filetypes = { 'blade', 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
         }
