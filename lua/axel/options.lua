@@ -1,49 +1,49 @@
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.breakindent = true
+vim.opt.expandtab = true                        -- Use spaces instead of tabs
+vim.opt.shiftwidth = 4                          -- Make indention 4 spaces wide
+vim.opt.tabstop = 4                             -- Use 4 spaces for tabbing
+vim.opt.softtabstop = 4                         -- Use 4 spaces when showing tab chars
 
--- Decrease update time
-vim.opt.updatetime = 250
-vim.wo.signcolumn = 'yes:1'
+vim.opt.smartindent = true                      -- Attempts to indent smartly.
 
-vim.opt.smartindent = true
+vim.opt.breakindent = true                      -- Wrapped text maintains visual indentation.
 
-vim.opt.wrap = false
+vim.opt.updatetime = 250                        -- Decrease update time between swap files.
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.wo.signcolumn = 'yes:1'                     -- Draw the "sign column" at all times, 1 char wide.
 
-vim.opt.wildmode =
-'longest:full,full'                    -- complete the longest common match, and allow tabbing the results to fully complete them
+vim.opt.wrap = false                            -- Disable text wrapping by default
 
-vim.opt.title = true
-vim.opt.mouse = 'a' -- enable mouse for all modes
+vim.opt.number = true                           -- Enable line numbers
+vim.opt.relativenumber = true                   -- Make line numbers relative for ease of jumping around
 
--- vim.opt.scrolljump = -50 -- Worth considering? 
+vim.opt.wildmode = 'longest:full,full'          -- Tab to complete the longest match in the : command line
 
--- Laracasts
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.opt.title = true                            -- Set the title of the terminal window based on context
 
-vim.opt.list = true                     -- enable the below listchars
-vim.opt.listchars = { tab = '▸ ', trail = '·' }
-vim.opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
+vim.opt.mouse = 'a'                             -- enable mouse for all modes
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.opt.ignorecase = true                       -- Ignore case in patterns by default
+vim.opt.smartcase = true                        -- Override ignoring case if the pattern contains uppercase
 
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
+vim.opt.list = true                             -- 'list' helps visualize tabs, spaces, and line endings
+vim.opt.listchars = { tab = '» ', trail = '·' } -- Specify characters to use for those
+vim.opt.fillchars:append({ eob = ' ' })         -- remove the ~ from end of buffer
 
-vim.opt.clipboard = 'unnamedplus' -- Use system clipboard
+vim.opt.splitbelow = true                       -- Copied from Jess Archer via Laracasts tbh.
+vim.opt.splitright = true                       -- Not sure why both of these are true.
 
-vim.opt.confirm = true            -- ask for confirmation instead of erroring
+vim.opt.scrolloff = 8                           -- Add an 8-line gap at the top and bottom of Vim when scrolling
+vim.opt.sidescrolloff = 8                       -- Add an 8-column gap at the right and left of Vim when scrolling
 
-vim.opt.undofile = true           -- persistent undo
-vim.opt.backup = true             -- automatically save a backup file
-vim.opt.backupdir:remove('.')     -- keep backups out of the current directory
+vim.opt.clipboard = 'unnamedplus'               -- Use system clipboard
 
-vim.opt.completeopt = 'menuone,noselect'
-vim.opt.swapfile = false
+vim.opt.confirm = true                          -- ask for confirmation instead of erroring
+
+vim.opt.undofile = true                         -- persistent undo
+vim.opt.backup = true                           -- automatically save a backup file
+vim.opt.backupdir:remove('.')                   -- keep backups out of the current directory
+
+vim.opt.completeopt = 'menuone,noselect'        -- Use a popup menu for : command completion, even if only one item
+vim.opt.swapfile = false                        -- Don't create a .swp file when opening a file
+
+vim.opt.exrc = true                             -- Look for `.nvim.lua` and similar project-specific init files
