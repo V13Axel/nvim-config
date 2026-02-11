@@ -13,7 +13,7 @@ return {
         "antoinemadec/FixCursorHold.nvim",
         "nvim-treesitter/nvim-treesitter",
         "rouge8/neotest-rust",
-        "olimorris/neotest-phpunit",
+        -- "olimorris/neotest-phpunit",
         neotest_pest,
     },
     config = function()
@@ -93,10 +93,10 @@ return {
                 end,
             },
             adapters = {
-                require('neotest-phpunit')({
-                    filter_dirs = { "vendor" },
-                    root_ignore_files = { "tests/Pest.php" }
-                }),
+                -- require('neotest-phpunit')({
+                --     filter_dirs = { "vendor" },
+                --     root_ignore_files = { "tests/Pest.php" }
+                -- }),
                 require('neotest-rust'),
                 require('neotest-pest')({
                     parallel = function() return (#vim.loop.cpu_info())/2 end,

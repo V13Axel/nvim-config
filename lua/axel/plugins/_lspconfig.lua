@@ -17,14 +17,6 @@ return {
             virtual_lines = false
         })
 
-        vim.keymap.set(
-            "",
-            "<leader>ll",
-            require("lsp_lines").toggle,
-            { desc = "Toggle lsp_lines" }
-        )
-
-
         -- Managest external tooling
         require('mason').setup()
 
@@ -35,13 +27,16 @@ return {
             'lua_ls',
             'emmet_language_server',
             'tailwindcss',
-            -- 'intelephense',
+            'intelephense',
             'openscad_lsp',
             'bashls',
             'cssls',
+            'rust_analyzer',
             -- 'somesass_ls',
-            'phpactor',
+            -- 'phpactor',
         }
+
+        vim.lsp.enable(servers);
 
         --
         -- nvim-cmp supports additional completion capabilities
@@ -98,6 +93,13 @@ return {
                 print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
             end, '[W]orkspace [L]ist Folders')
 
+            vim.keymap.set(
+                "",
+                "<leader>ll",
+                require("lsp_lines").toggle,
+                { desc = "Toggle lsp_lines" }
+            )
+
             -- Create a command `:Format` local to the LSP buffer
             vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
                 if vim.lsp.buf.format then
@@ -112,7 +114,7 @@ return {
             -- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
         end
 
-        require("lspconfig").cssls.setup {
+        vim.lsp.config('cssls', {
             cmd = { "vscode-css-language-server", "--stdio" },
             on_attach = on_attach,
             capabilities = capabilities,
@@ -125,23 +127,23 @@ return {
                     },
                 },
             },
-        }
+        });
 
-        require("lspconfig").clangd.setup {
+        vim.lsp.config('clangd', {
             on_attach = on_attach,
             capabilities = capabilities,
             cmd = { "clangd", "--offset-encoding=utf-16", },
-        }
+        });
 
-        require('lspconfig').bashls.setup {
+        vim.lsp.config('bashls', {
             filetypes = { 'sh', 'zsh' },
-        }
+        });
 
         for _, lsp in ipairs(servers) do
-            require('lspconfig')[lsp].setup {
+            vim.lsp.config(lsp, {
                 on_attach = on_attach,
                 capabilities = capabilities,
-            }
+            });
         end
 
         -- Example custom configuration for lua
@@ -151,18 +153,18 @@ return {
         table.insert(runtime_path, 'lua/?.lua')
         table.insert(runtime_path, 'lua/?/init.lua')
 
-        require('lspconfig').intelephense.setup {
+        vim.lsp.config('intelephense', {
             init_options = {
                 licenceKey = os.getenv('INTELEPHENSE_KEY')
             }
-        }
+        })
 
-        require('lspconfig').emmet_language_server.setup {
+        vim.lsp.config('emmet_language_server', {
             capabilities = capabilities,
             filetypes = { 'blade', 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
-        }
+        })
 
-        require('lspconfig').gdscript.setup {
+        vim.lsp.config('gdscript', {
             on_attach = function(client, bufnr)
                 -- vim.opt_local.foldmethod = 'expr'
                 vim.opt_local.tabstop = 4
@@ -171,9 +173,9 @@ return {
             capabilities = capabilities,
             filetypes = { 'gdscript', 'gd', 'gdscript3' },
             flags = { debounce_text_changes = 150 },
-        }
+        })
 
-        require('lspconfig').lua_ls.setup {
+        vim.lsp.config('lua_ls', {
             on_attach = on_attach,
             capabilities = capabilities,
             settings = {
@@ -192,7 +194,7 @@ return {
                     telemetry = { enable = false },
                 },
             },
-        }
+        })
 
 
         -- null-ls

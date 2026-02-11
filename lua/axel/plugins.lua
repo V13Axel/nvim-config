@@ -163,6 +163,9 @@ local plugins = {
 
     -- Highlights colors directly in the editor
     { import = 'axel.plugins._nvim-highlight-colors' },
+
+    -- Lets us edit LaTeX
+    { import = 'axel.plugins._vimtex' },
 }
 
 require("lazy").setup(plugins);
