@@ -1,6 +1,7 @@
 return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    branch = 'main',
     dependencies = {
         'nvim-treesitter/nvim-treesitter-textobjects',
         'nvim-treesitter/nvim-treesitter-context'
@@ -36,16 +37,6 @@ return {
             additional_vim_regex_highlighting = false,
         },
         indent = { enable = true },
-        incremental_selection = {
-            enable = true,
-            keymaps = {
-                init_selection = '<c-space>',
-                node_incremental = '<c-space>',
-                -- TODO: I'm not sure for this one.
-                scope_incremental = '<c-s>',
-                node_decremental = '<c-backspace>',
-            },
-        },
         textobjects = {
             lsp_interop = {
                 enable = true,

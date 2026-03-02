@@ -166,6 +166,9 @@ local plugins = {
 
     -- Lets us edit LaTeX
     { import = 'axel.plugins._vimtex' },
+
+    -- Hooks up opencode via ACP
+    { import = 'axel.plugins._opencode' },
 }
 
 require("lazy").setup(plugins);
